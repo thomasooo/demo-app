@@ -1,4 +1,4 @@
-# React Native Material Design Demo App [Android]
+# RUN WITH REACT-NATIVE 0.36.1 Material Design Demo App [Android]
 
 This repository contains a React Native project, implementing the [react-native-material-design](https://github.com/react-native-material-design/react-native-material-design) package.
 
@@ -115,10 +115,10 @@ You can have as many children, and children of children as you like.
 ##### `static getInitialRoute([optional] defaultRoute, [optional] routesConfig)`
 
  - **defaultRoute**: Specify a parent route to return. By default however this will look for the first parent on your routes config with
-  `initialRoute: true`, else, if no initial route specified it'll just return the first parent route. 
+  `initialRoute: true`, else, if no initial route specified it'll just return the first parent route.
  - **routesConfig**: Specify the routes config. This is not required if you have a `routes.js` file setup in `/src`.
 
-Can be called without class instantiation, and is used to get an initial starting route to show initially. 
+Can be called without class instantiation, and is used to get an initial starting route to show initially.
 
 This is handy for configuring initial routes, for example [here](https://github.com/react-native-material-design/demo-app/blob/master/index.android.js#L62).
 

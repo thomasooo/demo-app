@@ -1,21 +1,37 @@
-import React, { AppRegistry, Component, StyleSheet, Text, View } from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
 
-class DemoApp extends Component {
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+
+export default class MaterialDesignProject extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          React Native Material Design
+          Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
-          iOS example coming soon... PRs welcome!
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
         </Text>
       </View>
     );
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -31,7 +47,7 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  }
+  },
 });
 
-AppRegistry.registerComponent('DemoApp', () => DemoApp);
+AppRegistry.registerComponent('MaterialDesignProject', () => MaterialDesignProject);

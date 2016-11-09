@@ -1,4 +1,5 @@
-import React, { AppRegistry, Component, Navigator, DrawerLayoutAndroid, ScrollView, View, Text } from 'react-native';
+import React, {Component } from 'react';
+import {AppRegistry, Navigator, DrawerLayoutAndroid, ScrollView, View, Text } from 'react-native';
 
 import Navigate from './src/utils/Navigate';
 import { Toolbar } from './src/components';
@@ -48,40 +49,40 @@ class Application extends Component {
 				drawerWidth={300}
 				drawerPosition={DrawerLayoutAndroid.positions.Left}
 				renderNavigationView={() => {
-                    if (drawer && navigator) {
-                        return navView;
-                    }
-                    return null;
-                }}
+					if (drawer && navigator) {
+						return navView;
+					}
+					return null;
+				}}
 				ref={(drawer) => { !this.state.drawer ? this.setDrawer(drawer) : null }}
-			>
+				>
 				{drawer &&
-				<Navigator
-					initialRoute={Navigate.getInitialRoute()}
-					navigationBar={<Toolbar onIconPress={drawer.openDrawer} />}
-					configureScene={() => {
-                            return Navigator.SceneConfigs.FadeAndroid;
-                        }}
-					ref={(navigator) => { !this.state.navigator ? this.setNavigator(navigator) : null }}
-					renderScene={(route) => {
-                        if (this.state.navigator && route.component) {
-                            return (
-                                <View
-                                    style={styles.scene}
-                                    showsVerticalScrollIndicator={false}>
-                                	<route.component title={route.title} path={route.path} {...route.props} />
-                                </View>
-                            );
-                        }
-                    }}
-				/>
+					<Navigator
+						initialRoute={Navigate.getInitialRoute()}
+						navigationBar={<Toolbar onIconPress={drawer.openDrawer} />}
+						configureScene={() => {
+							return Navigator.SceneConfigs.FadeAndroid;
+						}}
+						ref={(navigator) => { !this.state.navigator ? this.setNavigator(navigator) : null }}
+						renderScene={(route) => {
+							if (this.state.navigator && route.component) {
+								return (
+									<View
+										style={styles.scene}
+										showsVerticalScrollIndicator={false}>
+										<route.component title={route.title} path={route.path} {...route.props} />
+									</View>
+								);
+							}
+						}}
+						/>
 				}
 			</DrawerLayoutAndroid>
 		);
 	}
 }
 
-AppRegistry.registerComponent('DemoApp', () => Application);
+AppRegistry.registerComponent('MaterialDesignProject', () => Application);
 
 const styles = {
 	scene: {
