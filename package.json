@@ -12,9 +12,8 @@
     "@remobile/react-native-splashscreen": "^1.0.4",
     "alt": "^0.18.6",
     "react": "15.3.2",
-    "react-native": "^0.37.0",
-    "react-native-action-button": "^2.0.13",
-    "react-native-android-statusbar": "^0.1.3",
+    "react-native": "^0.38.0-rc.0",
+    "react-native-action-button": "^2.0.14",
     "react-native-material-design": "github:thomasooo/react-native-material-design"
   },
   "jest": {

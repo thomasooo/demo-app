@@ -66,6 +66,13 @@ export default class Navigation extends Component {
 						onPress: () => this.changeScene('buttons'),
 						onLongPress: () => this.changeScene('buttons')
 					}, {
+						icon: 'label',
+						value: 'Action Button',
+						active: route === 'action-button-example',
+						label: '8',
+						onPress: () => this.changeScene('action-button-example'),
+						onLongPress: () => this.changeScene('action-button-example')
+					}, {
 						icon: 'check-box',
 						value: 'Checkboxes',
 						label: '10',

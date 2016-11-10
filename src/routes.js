@@ -25,6 +25,12 @@ export default {
 		component: require('./scenes/Buttons').default
 	},
 
+	'action-button-example': {
+
+		title: 'Action Button',
+		component: require('./scenes/ActionButtonExample').default
+	},
+
 	checkboxes: {
 		title: 'Checkboxes',
 		component: require('./scenes/Checkboxes').default
@@ -61,4 +67,4 @@ export default {
 		title: 'Change Theme',
 		component: require('./scenes/Themes').default
 	}
-}
+};

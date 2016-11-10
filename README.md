@@ -1,4 +1,4 @@
-# RUN WITH REACT-NATIVE 0.37 Material Design Demo App [Android]
+# RUN WITH REACT-NATIVE 0.38.0-rc.0 Material Design Demo App [Android]
 
 This repository contains a React Native project, implementing the [react-native-material-design](https://github.com/react-native-material-design/react-native-material-design) package.
 
