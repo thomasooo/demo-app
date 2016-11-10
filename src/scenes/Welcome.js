@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, Image, Linking, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, Image, Linking, StyleSheet } from 'react-native';
 import { Card, CardActions, Button, COLOR, TYPO } from 'react-native-material-design';
 
 import AppStore from '../stores/AppStore';
@@ -15,7 +15,7 @@ export default class Welcome extends Component {
 		const theme = AppStore.getState().theme;
 
 		return (
-			<View>
+			<ScrollView>
 				<Card>
 					<Card.Media
 						image={<Image source={require('./../img/welcome.jpg')} />}
@@ -37,7 +37,7 @@ export default class Welcome extends Component {
 					</Card.Body>
 				</Card>
 				<Button text="Go to child component" primary={theme} onPress={() => { navigator.forward('example') }} />
-			</View>
+			</ScrollView>
 		);
 	}
 

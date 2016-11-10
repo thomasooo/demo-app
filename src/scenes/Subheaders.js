@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { Subheader, Ripple } from 'react-native-material-design';
 
 export default class Subheaders extends Component {
 
 	render() {
 		return (
-			<View>
+			<ScrollView>
 				<Subheader text="Normal Subheader"/>
 				<Subheader text="Normal Subheader with color" color="paperRed" />
 				<Subheader text="Normal Subheader" inset />
@@ -19,7 +19,7 @@ export default class Subheaders extends Component {
 						</View>
 					</Ripple>
 				</View>
-			</View>
+			</ScrollView>
 		);
 	}
 }

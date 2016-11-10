@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image } from 'react-native';
+import { View, ScrollView, Image } from 'react-native';
 import { Avatar, Subheader, COLOR, IconToggle, Icon } from 'react-native-material-design';
 
 export default class IconToggles extends Component {
@@ -20,7 +20,7 @@ export default class IconToggles extends Component {
 
 	render() {
 		return (
-			<View>
+			<ScrollView>
 				<Subheader text="Icons"/>
 				<View style={styles.avatarContainer}>
 					<IconToggle color="paperGrey900">
@@ -133,7 +133,7 @@ export default class IconToggles extends Component {
 							/>
 					</IconToggle>
 				</View>
-			</View>
+			</ScrollView>
 		);
 	}
 }

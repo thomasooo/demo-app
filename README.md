@@ -1,4 +1,4 @@
-# RUN WITH REACT-NATIVE 0.36.1 Material Design Demo App [Android]
+# RUN WITH REACT-NATIVE 0.37 Material Design Demo App [Android]
 
 This repository contains a React Native project, implementing the [react-native-material-design](https://github.com/react-native-material-design/react-native-material-design) package.
 
@@ -14,6 +14,8 @@ This repository contains a React Native project, implementing the [react-native-
 4. Run `react-native run-android`.
 
 > If running on a device, run `adb reverse tcp:8081 tcp:8081`.
+
+> ERROR: `: No such file or directory` - open `./android/gradlew` in text editor and change `line endings to linux format`.
 
 ### APK
 

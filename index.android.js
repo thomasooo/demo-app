@@ -1,10 +1,12 @@
 import React, {Component } from 'react';
-import {AppRegistry, Navigator, DrawerLayoutAndroid, ScrollView, View, Text } from 'react-native';
+import {AppRegistry, Navigator, DrawerLayoutAndroid, ScrollView, View, Text, StatusBar } from 'react-native';
 
 import Navigate from './src/utils/Navigate';
 import { Toolbar } from './src/components';
 import Navigation from './src/scenes/Navigation';
 import Welcome from './src/scenes/Welcome';
+import AppStore from './src/stores/AppStore';
+import { COLOR } from 'react-native-material-design';
 
 class Application extends Component {
 
@@ -17,7 +19,8 @@ class Application extends Component {
 		super(props);
 		this.state = {
 			drawer: null,
-			navigator: null
+			navigator: null,
+			theme: AppStore.getState().theme
 		};
 	}
 
@@ -40,9 +43,30 @@ class Application extends Component {
 		});
 	};
 
+	componentDidMount = () => {
+		AppStore.listen(this.handleAppStore);
+	};
+
+	componentWillUnmount() {
+		AppStore.unlisten(this.handleAppStore);
+	}
+
+	handleAppStore = (store) => {
+		this.setState({
+			theme: store.theme
+		});
+	};
+
 	render() {
-		const { drawer, navigator } = this.state;
-		const navView = React.createElement(Navigation);
+		let { drawer, navigator } = this.state;
+		let navView = React.createElement(Navigation);
+		let statusbarColor = 'black';
+
+		try {
+			statusbarColor = COLOR[`${this.state.theme}700`].color
+		} catch (e) {
+
+		}
 
 		return (
 			<DrawerLayoutAndroid
@@ -56,6 +80,10 @@ class Application extends Component {
 				}}
 				ref={(drawer) => { !this.state.drawer ? this.setDrawer(drawer) : null }}
 				>
+				<StatusBar
+					backgroundColor={statusbarColor}
+					barStyle="light-content"
+					/>
 				{drawer &&
 					<Navigator
 						initialRoute={Navigate.getInitialRoute()}
